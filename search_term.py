@@ -4,13 +4,15 @@ import sys
 import platform
 import os
 import dev_forum_db
-import datetime
 
 if len(sys.argv) != 2:
   print ('python search_term.py serch-word')
   exit()
 
-search_term = sys.argv[1].decode('cp932')
+if platform.system() == 'Windows':
+    search_term = sys.argv[1].decode('cp932')
+else:
+    search_term = sys.argv[1]
 
 db_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'dev_forum_db.sqlite')
 dev_forum_db.connect(db_path)

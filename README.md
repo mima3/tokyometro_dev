@@ -4,14 +4,27 @@
 
 https://developer.tokyometroapp.jp/  
 
+Windows7, Debianのpython2.7で動作を確認しています。  
+
+
 依存ファイル  
 -------------
-下記のファイルに依存しているので、easy_installなり,pipでインストールしてください。
+下記のファイルに依存しているので、easy_installなり,pipでインストールしてください。  
+
 peewee  
 urllib2  
 lxml  
 cookielib  
 ConfigParser  
+
+
+Debianでlxmlをインストールするには、下記のファイルが必要になります。
+
+    apt-get install libxml2-dev libxslt1-dev
+
+参考:  
+http://stackoverflow.com/questions/6504810/how-to-install-lxml-on-ubuntu  
+
 
 
 操作方法
@@ -29,7 +42,7 @@ ConfigParser
     python sync.py
 
 
-3.検索をします。
+3.指定のワードを含むトピックを検索をします。
 
     python search_term.py 列車
 
